@@ -61,6 +61,9 @@ module Dashing
       args = args.join(' ')
       command = "bundle exec thin -R config.ru start#{port_option} #{args}"
       command.prepend "export JOB_PATH=#{options[:job_path]}; " if options[:job_path]
+      puts "============================"
+      puts "START"
+      puts "============================"
       run_command(command)
     end
 
